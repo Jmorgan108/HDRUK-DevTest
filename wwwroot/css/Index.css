@@ -1,0 +1,121 @@
+﻿:root {
+    --hdr-navy: #0a1628;
+    --hdr-teal: #00b4d8;
+    --hdr-accent: #90e0ef;
+    --hdr-light: #f0f8ff;
+}
+
+body {
+    background-color: var(--hdr-navy);
+    color: #e0eaf5;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2244 60%, #0a3d62 100%);
+    border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    padding: 3rem 0 2rem;
+}
+
+    .hero h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 2.8rem;
+        color: #ffffff;
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        color: var(--hdr-accent);
+        font-weight: 300;
+        font-size: 1.05rem;
+    }
+
+.badge-count {
+    background: rgba(0, 180, 216, 0.15);
+    border: 1px solid rgba(0, 180, 216, 0.3);
+    color: var(--hdr-teal);
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+.dataset-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+    height: 100%;
+}
+
+    .dataset-card:hover {
+        background: rgba(0, 180, 216, 0.08);
+        border-color: rgba(0, 180, 216, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 180, 216, 0.1);
+    }
+
+    .dataset-card h5 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 1.1rem;
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .dataset-card p {
+        font-size: 0.88rem;
+        color: #8ba8c4;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+.access-badge {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    color: var(--hdr-teal);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.access-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--hdr-teal);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+    .access-link:hover {
+        color: var(--hdr-accent);
+        border-bottom-color: var(--hdr-accent);
+    }
+
+.divider {
+    border-color: rgba(255, 255, 255, 0.06);
+    margin: 1rem 0;
+}
+
+.no-data {
+    color: #8ba8c4;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: #4a6580;
+    font-size: 0.8rem;
+}

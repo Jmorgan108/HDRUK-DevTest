@@ -1,25 +1,62 @@
 ﻿@model List<HDRUK_DevTest.Models.HealthDataModel>
+@{
+    ViewData["Title"] = "Health Datasets";
+}
 
-<h1>Health Datasets</h1>
+<div class="hero">
+    <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-2">
+            <h1 class="mb-0">Health Datasets</h1>
+            <span class="badge-count">@Model.Count datasets</span>
+        </div>
+        <p class="mb-0">Explore metadata for health data entities available through HDR UK</p>
+    </div>
+</div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Access Category</th>
-            <th>Access Rights</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var dataset in Model)
-        {
-            <tr>
-                <td>@dataset.Title</td>
-                <td>@dataset.Description</td>
-                <td>@dataset.AccessServiceCategory</td>
-                <td><a href="@dataset.AccessRights">Link</a></td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container py-5">
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5">
+            <p class="no-data">No datasets available at this time.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+            @foreach (var dataset in Model)
+            {
+                <div class="col">
+                    <div class="dataset-card">
+
+                        @if (!string.IsNullOrEmpty(dataset.AccessServiceCategory))
+                        {
+                            <span class="access-badge">@dataset.AccessServiceCategory</span>
+                        }
+
+                        <h5>@(dataset.Title ?? "Untitled Dataset")</h5>
+
+                        <p>@(dataset.Description ?? "No description available.")</p>
+
+                        <hr class="divider" />
+
+                        @if (!string.IsNullOrEmpty(dataset.AccessRights))
+                        {
+                            <a href="@dataset.AccessRights" target="_blank" class="access-link">
+                                Access Rights
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 0-.5.5h-10a.5.5 0 0 0-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                                </svg>
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="no-data">No access rights available</span>
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

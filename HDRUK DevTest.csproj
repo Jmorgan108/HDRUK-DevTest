@@ -11,8 +11,4 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HDRUK_DevTest.Tests\HDRUK_DevTest.Tests.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,25 @@
+﻿@model List<HDRUK_DevTest.Models.HealthDataModel>
+
+<h1>Health Datasets</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Access Category</th>
+            <th>Access Rights</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dataset in Model)
+        {
+            <tr>
+                <td>@dataset.Title</td>
+                <td>@dataset.Description</td>
+                <td>@dataset.AccessServiceCategory</td>
+                <td><a href="@dataset.AccessRights">Link</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

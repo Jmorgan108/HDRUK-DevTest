@@ -1,0 +1,10 @@
+{
+  [
+    {
+      "title": "UK HDR Dataset",
+      "description": "A large-scale database for health information.",
+      "accessServiceCategory": "Open",
+      "accessRights": "https://www.hdruk.ac.uk/"
+    }
+  ]
+}

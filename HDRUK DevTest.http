@@ -1,0 +1,6 @@
+@HDRUK_DevTest_HostAddress = http://localhost:5231
+
+GET {{HDRUK_DevTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
